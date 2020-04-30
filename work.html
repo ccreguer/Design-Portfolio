@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <title>Home</title>
 
-  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,10 +18,11 @@
 <div class="firstindex2">
 
 <div class="topnav" id="myTopnav">
-  <a class="grow" href="portfolio.html">HOME</a>
-  <a class="grow  active" href="work.html">WORK</a>
-  <a class="grow" href="resume.html">RESUME</a>
-  <a class="grow" href="contact.html">CONTACT</a>  
+  <a href="portfolio.html">HOME</a>
+  <a class="active" href="work.html">WORK</a>
+  <a href="resume.html">RESUME</a>
+  <a href="contact.html">CONTACT</a>  
+
 
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
   <i class="fa fa-bars"></i>
@@ -71,7 +72,7 @@ Design</a></h2>
 </div>
 </a>
 <br>
-<h2 class="servicesheading"><a name="graphic">Graphic design</a></h2>
+<h2 class="servicesheading"><a id="graphic">Graphic design</a></h2>
 <br>
 <a href="photos/artdeco.png">
 <div id="work1" class="grow color">
@@ -117,6 +118,19 @@ copyright 2019 christopher creguer
 
 
 <script>
+
+
+$("a[href^='#']").click(function(e) {
+	e.preventDefault();
+	
+	var position = $($(this).attr("href")).offset().top;
+
+	$("body, html").animate({
+		scrollTop: position
+	} /* speed */ );
+});
+
+
   function myFunction() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {

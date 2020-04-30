@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <title>Home</title>
 
-  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,14 +18,16 @@
 <div class="firstindex">
 
 <div class="topnav" id="myTopnav">
-  <a class="grow active" href="portfolio.html">HOME</a>
-  <a class="grow" href="work.html">WORK</a>
-  <a class="grow" href="resume.html">RESUME</a>
-  <a class="grow" href="contact.html">CONTACT</a>  
+  <a class="active" href="portfolio.html">HOME</a>
+  <a  href="work.html">WORK</a>
+  <a href="resume.html">RESUME</a>
+  <a  href="contact.html">CONTACT</a> 
+
 
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
   <i class="fa fa-bars"></i>
 </a>
+
 </div>
 <div id="container">
 <h1 class="name">Chris Creguer</h1>
@@ -35,13 +37,14 @@ Designer
 dedicated
 to creating a more usable
 world, one project at a time.</h1>
-<div id="scroll" class="grow1"><img class="scroll" src="icons/scroll.png">
+<a href=#experience><div id="scroll" class="grow1"><img class="scroll" src="icons/scroll.png">
 </div>
+</a>
 </div>
 </div>
 
 <div id="second">
-<div id="experience">
+<div name= "experience" id="experience">
 <h4>make your brand an <span class="darktext">experience.</span></h4>
 <p class="display">display your
 values with precision and consistency </p>
@@ -66,7 +69,7 @@ values with precision and consistency </p>
 </div>
 </div>
 </a>
-<a name="graphic" href="work.html">
+<a href="work.html#graphic">
 <div id="right1" class="grow">
 <div class="right1inside"><img class="icons" src="icons/graphicdesign.png">
 <h2>graphic design</h2>
@@ -83,7 +86,22 @@ copyright 2019 christopher creguer
 </div>
 
 
+
+
+
 <script>
+
+$("a[href^='#']").click(function(e) {
+	e.preventDefault();
+	
+	var position = $($(this).attr("href")).offset().top;
+
+	$("body, html").animate({
+		scrollTop: position
+	} /* speed */ );
+});
+
+
 function myFunction() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
