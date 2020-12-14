@@ -415,6 +415,17 @@ Font-size:12px;
 
 }
 
+#description{
+
+        width:50%;
+        
+        }
+
+        #gallery{
+                width:50%;
+                float:right;
+        }
+
 /* responsive sizing */
 
 @media screen and (max-width: 845px) {
@@ -971,3 +982,5 @@ margin-bottom:10px;
 box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);}
 
 }
+
+
